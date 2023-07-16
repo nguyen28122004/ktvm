@@ -158,7 +158,6 @@ input.current-page-input
     outline: none;
     border: solid rgba(90, 90, 90, 0.611) 1px;
     border-radius: 4px;
-    margin-bottom: 5px;
     text-align: center;
 }
 .last-page
@@ -169,7 +168,6 @@ input.current-page-input
     font-size: 1rem;
     letter-spacing: 0.4rem;
     padding-left: 0.4rem;
-    padding-bottom: 4px;
     box-sizing: content-box;
 }
 
