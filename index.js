@@ -123,6 +123,18 @@ document.getElementsByClassName('showAllAns')[0].onclick = () => {
 
 // ===========================  CHANGE PAGE ====================
 
+$('.current-page-input').val(page)
+$('.last-page').text('/ ' + (parseInt( database.length / numOfQuestionPerPage) + 1))
+
+$(".current-page-input").on("keydown",function search(e) {
+    console.log(e)
+    if(e.keyCode == 13 && e.currentTarget.value <= parseInt( database.length / numOfQuestionPerPage) + 1) {
+        let customPage = e.currentTarget.value
+        window.location.href = ("./index.html?page=" + customPage)
+    }
+});
+
+
 $('.prevPage').click(function (e) {
     if(page == 1)
         return;
@@ -134,8 +146,8 @@ $('.prevPage').click(function (e) {
 $('.nextPage').click(function (e) { 
 
     console.log(database.length / numOfQuestionPerPage);
-    if(page == parseInt( database.length / numOfQuestionPerPage) )
-    return;
+    if(page == parseInt( database.length / numOfQuestionPerPage) + 1 )
+        return;
     page = page + 1 
     
     window.location.href = "./index.html?page=" + page.toString()
@@ -151,7 +163,11 @@ $('.submit').click(function (e) {
     for (let i = 0; i < Math.min( numOfQuestionPerPage , database.length - (page - 1) * numOfQuestionPerPage); i++) {
         for (let j = 0; j < 4; j++) {
             if (input[i*4 + j].checked == true && ansValue[i*4 +j].innerText == database[(page - 1) * numOfQuestionPerPage + i].correct_ans[0]) {
+                label[i*4 +j].setAttribute('style', 'background:rgba(0,255,0,0.4);')
                 score = score + 1
+            }
+            else if (input[i*4 + j].checked == true && ansValue[i*4 +j].innerText != database[(page - 1) * numOfQuestionPerPage + i].correct_ans[0]) {
+                label[i*4 +j].setAttribute('style', 'background:rgba(255,0,0,0.4);')
             }
             
         }
