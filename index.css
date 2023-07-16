@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Fasthand&family=Montserrat&family=Open+Sans&display=swap');
+
+
+body
+{
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background-color: rgb(254, 240, 235);
+    line-height: 1.6;
+}
+
+body:last-child
+{
+    margin-bottom: 50px;
+}
+.main
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+nav ul
+{
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li
+{
+    list-style: none !important;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+.box
+{
+    color: #000;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    border: solid rgba(90, 90, 90, 0.411) 1px
+}
+.box.question-box
+{
+    margin-top: 40px;
+}
+
+.question
+{
+    margin-bottom: 20px;
+}
+
+.ans
+{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+}
+.ans:not(:first-child)
+{
+    border-top: solid rgba(90, 90, 90, 0.411) 1px;
+}
+.value
+{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"]
+{
+    display: inline-flex;
+    align-items: center;
+}
+.right-answer-box
+{
+    margin-bottom: 30px;
+}
+
+button{
+    background-color: rgba(255, 255, 255, 0.308);
+    outline: none;
+    border: solid rgba(90, 90, 90, 0.411) 1px;
+    border-radius: 5px;
+    height: 40px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.pageChanging
+{
+    width: 75vw;
+    margin-bottom: -15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+button.submit
+{
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: bisque;
+}
+.hidden
+{
+    display: none;
+}
